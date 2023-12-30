@@ -23,7 +23,6 @@ export default function HomePage() {
           <h1 className='marutham bg-bgaccent'> User logged in</h1>
           {auth.user.id}
           <SignoutClient />
-          <CardWithForm />
         </div>
       );
     } else {
