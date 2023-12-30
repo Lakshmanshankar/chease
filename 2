@@ -1,0 +1,20 @@
+'use client';
+import { CardWithForm } from '@/components/custom/Card';
+import { useSession, signIn } from 'next-auth/react';
+import { redirect } from 'next/navigation';
+import React from 'react';
+
+function Login() {
+  const { data: session } = useSession();
+  if (session) {
+    return redirect('/home');
+  } else {
+    return (
+      <div className='login-screen flex min-h-screen w-full items-center justify-center'>
+        <CardWithForm />
+      </div>
+    );
+  }
+}
+
+export default Login;
